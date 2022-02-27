@@ -77,3 +77,22 @@ php artisan key:generate
 
 Acesse o projeto
 [http://localhost:8180](http://localhost:8180)
+
+# Erros e como resolvê-los
+
+## ERROR 1017 (HY000): Can’t find file: ‘./….frm’ (errno: 13) – MySQL
+para resolver esse erro você pode entrar no bash do mysql.
+```sh
+docker-compose exec mysql bash
+```
+Digite o seguinte comando para habilitar a permissão para modificar os arquivos no linux
+```sh
+chown -R mysql:mysql /var/lib/mysql
+```
+## Permission denied
+Para dar permissão digite o seguinte comando
+```sh
+sudo chown -R $USER:$USER ./
+```
+
+
